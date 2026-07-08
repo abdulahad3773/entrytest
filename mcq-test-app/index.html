@@ -1,0 +1,847 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Entry Test Practice — FAST-NUCES &amp; NUST</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+    <!-- KaTeX for math rendering -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css"
+    />
+    <script
+      defer
+      src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"
+    ></script>
+  </head>
+
+  <body>
+    <!-- ============================================================ -->
+    <!-- HOME VIEW -->
+    <!-- ============================================================ -->
+    <section id="view-home" class="view">
+      <div class="container home-container">
+        <div style="text-align: center">
+          <h1
+            style="
+              display: inline-block;
+              font-size: 3.6rem;
+              font-weight: 900;
+              font-family: &quot;Segoe UI&quot;, Arial, sans-serif;
+              letter-spacing: -1.5px;
+              border-bottom: 4px solid #2563eb;
+              padding-bottom: 8px;
+              margin: 20px 0;
+            "
+          >
+            <span style="color: #111827">Mock Entry</span>
+            <span style="color: #2563eb">Tests</span>
+          </h1>
+        </div>
+        <p class="app-subtitle">
+          FAST-NUCES, NUST &amp; MDCAT Entry Test Preparation
+        </p>
+
+        <h2 class="home-section-title">Choose Your Test</h2>
+
+        <div class="pattern-choice-grid">
+          <!-- FAST Card -->
+          <div
+            class="card pattern-choice-card"
+            style="position: relative; overflow: visible"
+          >
+            <!-- Merit Calculator - Floating Image Only -->
+            <button
+              id="fast-merit-btn"
+              class="merit-calc-btn"
+              title="Merit Calculator"
+            >
+              <img src="data/calculator.png" alt="Merit Calculator" />
+            </button>
+
+            <div class="pattern-header">
+              <img src="data/fast.png" alt="FAST Logo" class="pattern-logo" />
+              <h3>FAST Entry Test (FAST-NU)</h3>
+            </div>
+            <table class="pattern-table">
+              <thead>
+                <tr>
+                  <th>Section</th>
+                  <th>Qs</th>
+                  <th>Time</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Basic Mathematics</td>
+                  <td>20</td>
+                  <td>20 min</td>
+                </tr>
+                <tr>
+                  <td>IQ</td>
+                  <td>20</td>
+                  <td>20 min</td>
+                </tr>
+                <tr>
+                  <td>English</td>
+                  <td>30</td>
+                  <td>30 min</td>
+                </tr>
+                <tr>
+                  <td>Advanced Mathematics</td>
+                  <td>50</td>
+                  <td>50 min</td>
+                </tr>
+              </tbody>
+            </table>
+            <ul class="rules-list">
+              <li>Sections completed in order, one at a time</li>
+              <li>
+                Each section has its own timer; unused time is not carried over
+              </li>
+              <li>Math / IQ / Adv. Math: +1 correct, &minus;0.25 wrong</li>
+              <li>English: +0.33 correct, &minus;0.08 wrong</li>
+            </ul>
+            <button id="start-fast-btn" class="btn btn-primary btn-large">
+              Start FAST-NU
+            </button>
+          </div>
+
+          <!-- NUST Card -->
+          <div
+            class="card pattern-choice-card"
+            style="position: relative; overflow: visible"
+          >
+            <!-- Merit Calculator - Floating Image Only -->
+            <button
+              id="nust-merit-btn"
+              class="merit-calc-btn"
+              title="Merit Calculator"
+            >
+              <img src="data/calculator.png" alt="Merit Calculator" />
+            </button>
+
+            <div class="pattern-header">
+              <img src="data/nust.png" alt="NUST Logo" class="pattern-logo" />
+              <h3>NUST Entry Test (NET)</h3>
+            </div>
+            <table class="pattern-table">
+              <thead>
+                <tr>
+                  <th>Section</th>
+                  <th>Qs</th>
+                  <th>Time</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Mathematics</td>
+                  <td>100</td>
+                  <td
+                    rowspan="3"
+                    style="
+                      vertical-align: middle;
+                      text-align: center;
+                      font-weight: 700;
+                    "
+                  >
+                    180 min<br /><span
+                      style="
+                        font-size: 11px;
+                        font-weight: 400;
+                        color: var(--color-muted);
+                      "
+                      >shared</span
+                    >
+                  </td>
+                </tr>
+                <tr>
+                  <td>Physics</td>
+                  <td>60</td>
+                </tr>
+                <tr>
+                  <td>English</td>
+                  <td>40</td>
+                </tr>
+              </tbody>
+            </table>
+            <ul class="rules-list">
+              <li>Move freely between sections at any time</li>
+              <li>One shared 180-minute timer for the whole exam</li>
+              <li>+1 for every correct answer</li>
+              <li>No marking negatives</li>
+            </ul>
+            <button id="start-nust-btn" class="btn btn-primary btn-large">
+              Start NET
+            </button>
+          </div>
+
+          <!-- MDCAT Card -->
+          <div
+            class="card pattern-choice-card"
+            style="position: relative; overflow: visible"
+          >
+            <div class="pattern-header">
+              <img src="data/mdcat.jpg" alt="PMDC Logo" class="pattern-logo" />
+              <h3>MDCAT Mock Test</h3>
+            </div>
+            <table class="pattern-table">
+              <thead>
+                <tr>
+                  <th>Section</th>
+                  <th>Qs</th>
+                  <th>Time</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Biology</td>
+                  <td>81</td>
+                  <td
+                    rowspan="5"
+                    style="
+                      vertical-align: middle;
+                      text-align: center;
+                      font-weight: 700;
+                    "
+                  >
+                    180 min<br /><span
+                      style="
+                        font-size: 11px;
+                        font-weight: 400;
+                        color: var(--color-muted);
+                      "
+                      >shared</span
+                    >
+                  </td>
+                </tr>
+                <tr>
+                  <td>Chemistry</td>
+                  <td>45</td>
+                </tr>
+                <tr>
+                  <td>Physics</td>
+                  <td>36</td>
+                </tr>
+                <tr>
+                  <td>English</td>
+                  <td>9</td>
+                </tr>
+                <tr>
+                  <td>Logical Reasoning</td>
+                  <td>9</td>
+                </tr>
+              </tbody>
+            </table>
+            <ul class="rules-list">
+              <li>Move freely between subjects at any time</li>
+              <li>One shared 180-minute timer for the whole exam</li>
+              <li>+1 for every correct answer</li>
+              <li>No negative marking &middot; 180 MCQs total</li>
+            </ul>
+            <button id="start-mdcat-btn" class="btn btn-primary btn-large">
+              Start MDCAT
+            </button>
+          </div>
+        </div>
+
+        <p class="rules-list home-footnote">
+          Questions are randomly selected and shuffled every attempt.
+        </p>
+
+        <!-- FOOTER WITH SOCIAL LINKS -->
+        <footer class="home-footer">
+          <p class="footer-credit">Made by <strong>Abdul Ahad</strong></p>
+          <div class="footer-social-links">
+            <a
+              href="https://github.com/abdulahad3773"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="GitHub"
+            >
+              <svg class="social-icon" viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.15 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.62.24 2.85.12 3.15.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"
+                />
+              </svg>
+            </a>
+            <a
+              href="https://www.instagram.com/abdulahad_3773"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Instagram"
+            >
+              <svg class="social-icon" viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"
+                />
+              </svg>
+            </a>
+            <a
+              href="https://abdulahad3773.github.io/portfolio"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Portfolio"
+            >
+              <svg
+                class="social-icon"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
+                <circle cx="12" cy="7" r="4" />
+              </svg>
+            </a>
+          </div>
+        </footer>
+      </div>
+    </section>
+
+    <!-- ============================================================ -->
+    <!-- SECTION INTRO VIEW (shown before each section begins) -->
+    <!-- ============================================================ -->
+    <section id="view-section-intro" class="view hidden">
+      <div class="container">
+        <div class="card section-intro-card">
+          <p class="intro-progress" id="intro-section-progress">
+            Section 1 of 3
+          </p>
+          <h2 id="intro-section-name">Section Name</h2>
+          <p class="intro-detail">
+            <span id="intro-question-count">20</span> questions &middot;
+            <span id="intro-duration">20</span> minutes
+          </p>
+          <p class="intro-note">
+            Once you begin, the timer starts immediately and cannot be paused.
+            Unused time will not carry over to the next section.
+          </p>
+          <button id="begin-section-btn" class="btn btn-primary btn-large">
+            Begin Section
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================ -->
+    <!-- EXAM VIEW (used by both FAST and NUST) -->
+    <!-- ============================================================ -->
+    <section id="view-exam" class="view hidden">
+      <header class="exam-header">
+        <div class="exam-header-left">
+          <img id="exam-logo" src="" alt="Logo" class="exam-logo hidden" />
+          <div class="exam-header-titles">
+            <span class="exam-section-title" id="exam-section-title"
+              >Section Name</span
+            >
+            <span class="exam-section-progress" id="exam-section-progress"
+              >Section 1 of 3</span
+            >
+          </div>
+        </div>
+        <div class="exam-header-right">
+          <span class="timer-label" id="timer-label-text">Time Left</span>
+          <span class="timer-display" id="timer-display">20:00</span>
+        </div>
+      </header>
+
+      <!-- Section tabs: only shown for NUST's free-navigation mode -->
+      <div id="section-tabs" class="section-tabs hidden">
+        <!-- tab buttons injected by app.js -->
+      </div>
+
+      <div class="exam-body">
+        <main class="exam-main">
+          <div class="card question-card">
+            <p class="question-number" id="question-number">Question 1 of 20</p>
+            <p class="question-text" id="question-text">
+              Question text goes here
+            </p>
+
+            <div class="options-container" id="options-container">
+              <!-- options injected by app.js -->
+            </div>
+
+            <div class="question-actions">
+              <button id="clear-answer-btn" class="btn btn-text">
+                Clear Answer
+              </button>
+              <button id="mark-review-btn" class="btn btn-text">
+                Mark for Review
+              </button>
+            </div>
+          </div>
+
+          <div class="nav-buttons">
+            <button id="prev-question-btn" class="btn btn-nav-prev">
+              &larr; Previous
+            </button>
+            <button id="next-question-btn" class="btn btn-nav-next">
+              Next &rarr;
+            </button>
+            <button id="finish-section-btn" class="btn btn-finish-section">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="15"
+                height="15"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+              Finish Section
+            </button>
+            <button id="submit-exam-btn" class="btn btn-submit-exam hidden">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="15"
+                height="15"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+              Submit Exam
+            </button>
+          </div>
+        </main>
+
+        <aside class="exam-sidebar">
+          <div class="card palette-card">
+            <h3>
+              Questions
+              <button class="palette-expand-btn" id="palette-expand-btn">
+                Expand
+              </button>
+            </h3>
+
+            <!-- SCROLLABLE PALETTE CONTAINER -->
+            <div class="palette-scroll-container" id="palette-scroll-container">
+              <div class="question-palette" id="question-palette">
+                <!-- palette buttons injected by app.js -->
+              </div>
+            </div>
+
+            <!-- FIXED LEGEND AT BOTTOM -->
+            <div class="palette-legend-wrapper">
+              <div class="palette-legend">
+                <div class="legend-row">
+                  <span class="legend-swatch palette-answered"></span>Answered
+                  (<span id="count-answered">0</span>)
+                </div>
+                <div class="legend-row">
+                  <span class="legend-swatch palette-marked"></span>Review
+                  (<span id="count-marked">0</span>)
+                </div>
+                <div class="legend-row">
+                  <span class="legend-swatch palette-visited"></span>Visited
+                  (<span id="count-visited">0</span>)
+                </div>
+                <div class="legend-row">
+                  <span class="legend-swatch palette-not-visited"></span
+                  >Unvisited (<span id="count-not-visited">0</span>)
+                </div>
+              </div>
+
+              <div
+                id="nust-overall-progress"
+                class="nust-overall-progress hidden"
+              >
+                Overall: <span id="overall-answered-count">0</span> /
+                <span id="overall-total-count">0</span> answered
+              </div>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <!-- ============================================================ -->
+    <!-- SUBMIT WHOLE EXAM CONFIRMATION MODAL (NUST) -->
+    <!-- ============================================================ -->
+    <div id="submit-exam-modal" class="modal-overlay hidden">
+      <div class="modal-box">
+        <h3>Submit the entire exam?</h3>
+        <p id="submit-exam-summary">
+          You won't be able to change any answers after this. Any unanswered
+          questions will be marked as unattempted.
+        </p>
+        <div class="modal-actions">
+          <button id="submit-exam-cancel-btn" class="btn btn-secondary">
+            Cancel
+          </button>
+          <button id="submit-exam-confirm-btn" class="btn btn-primary">
+            Submit Exam
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- ============================================================ -->
+    <!-- FINISH SECTION CONFIRMATION MODAL -->
+    <!-- ============================================================ -->
+    <div id="confirm-modal" class="modal-overlay hidden">
+      <div class="modal-box">
+        <h3>Finish this section?</h3>
+        <p>
+          You won't be able to return to these questions once you finish. Any
+          unanswered questions will be marked as unattempted. Unused time will
+          not carry over.
+        </p>
+        <div class="modal-actions">
+          <button id="confirm-cancel-btn" class="btn btn-secondary">
+            Cancel
+          </button>
+          <button id="confirm-finish-btn" class="btn btn-primary">
+            Finish Section
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- ============================================================ -->
+    <!-- FULLSCREEN WARNING MODAL -->
+    <!-- ============================================================ -->
+    <div id="fullscreen-modal" class="modal-overlay hidden">
+      <div class="modal-box">
+        <h3 style="color: var(--color-wrong); margin-bottom: 8px">
+          Fullscreen Required
+        </h3>
+        <p id="fullscreen-warning-text">
+          You must stay in fullscreen mode during the test. Exiting fullscreen
+          is not allowed.
+        </p>
+        <div class="modal-actions">
+          <button id="fullscreen-resume-btn" class="btn btn-primary">
+            Resume Test (Fullscreen)
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- ============================================================ -->
+    <!-- RESULT VIEW -->
+    <!-- ============================================================ -->
+    <section id="view-result" class="view hidden">
+      <div class="container result-container">
+        <div class="result-top-grid">
+          <!-- LEFT: Score summary -->
+          <div class="card result-card">
+            <h2>Test Result</h2>
+            <span id="result-pass-badge" class="pass-badge hidden">PASS</span>
+
+            <div class="result-score-block">
+              <div class="result-score-main">
+                <span class="result-score-value" id="result-total-score"
+                  >0</span
+                >
+                <span class="result-score-max"
+                  >/ <span id="result-max-score">0</span></span
+                >
+              </div>
+              <div class="result-percentage" id="result-percentage">0%</div>
+            </div>
+
+            <div class="result-summary-grid">
+              <div class="summary-box">
+                <span class="summary-value" id="result-correct">0</span>
+                <span class="summary-label">Correct</span>
+              </div>
+              <div class="summary-box">
+                <span class="summary-value" id="result-wrong">0</span>
+                <span class="summary-label">Wrong</span>
+              </div>
+              <div class="summary-box">
+                <span class="summary-value" id="result-unattempted">0</span>
+                <span class="summary-label">Unattempted</span>
+              </div>
+            </div>
+
+            <div class="result-actions">
+              <button id="view-review-btn" class="btn btn-secondary">
+                Review Answers
+              </button>
+              <button id="retake-test-btn" class="btn btn-primary">
+                Retake Test
+              </button>
+            </div>
+            <button
+              id="choose-different-test-btn"
+              class="btn btn-text result-different-test-link"
+            >
+              Choose a different test
+            </button>
+          </div>
+
+          <!-- RIGHT: Aggregate calculator (always visible) -->
+          <div id="aggregate-calculator" class="card aggregate-calc-card">
+            <h3 class="calc-title">
+              <span id="calc-university-name">FAST</span> Aggregate
+            </h3>
+            <div class="calc-grid">
+              <div class="calc-row">
+                <label for="calc-matric-obt">Matric / O-Level</label>
+                <div class="calc-inputs">
+                  <input
+                    type="number"
+                    id="calc-matric-obt"
+                    placeholder="Obtained"
+                    min="0"
+                    value="0"
+                  />
+                  <span>/</span>
+                  <input
+                    type="number"
+                    id="calc-matric-tot"
+                    placeholder="Total"
+                    min="1"
+                    value="1100"
+                  />
+                </div>
+              </div>
+              <div class="calc-row">
+                <label for="calc-fsc-obt">FSc / A-Level</label>
+                <div class="calc-inputs">
+                  <input
+                    type="number"
+                    id="calc-fsc-obt"
+                    placeholder="Obtained"
+                    min="0"
+                    value="0"
+                  />
+                  <span>/</span>
+                  <input
+                    type="number"
+                    id="calc-fsc-tot"
+                    placeholder="Total"
+                    min="1"
+                    value="1100"
+                  />
+                </div>
+              </div>
+              <div class="calc-row">
+                <label for="calc-test-obt"
+                  >Entry Test
+                  <span class="calc-label-hint">(from result)</span></label
+                >
+                <div class="calc-inputs">
+                  <input
+                    type="number"
+                    id="calc-test-obt"
+                    placeholder="Obtained"
+                    min="0"
+                    step="0.01"
+                  />
+                  <span>/</span>
+                  <input
+                    type="number"
+                    id="calc-test-tot"
+                    placeholder="Total"
+                    min="1"
+                    step="0.01"
+                    readonly
+                  />
+                </div>
+              </div>
+            </div>
+
+            <div class="calc-result-box">
+              <div class="calc-result-label">Estimated Aggregate</div>
+              <div id="calc-aggregate-value" class="calc-result-value">
+                0.00%
+              </div>
+              <div id="calc-formula-desc" class="calc-result-formula">
+                Formula: 10% Matric + 40% FSc + 50% Entry Test
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Section breakdown below the two-column grid -->
+        <div class="card result-breakdown-card">
+          <h3 class="section-breakdown-title">Section-wise Breakdown</h3>
+          <div id="result-section-list" class="result-section-list">
+            <!-- injected by app.js -->
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================ -->
+    <!-- REVIEW VIEW -->
+    <!-- ============================================================ -->
+    <section id="view-review" class="view hidden">
+      <div class="container">
+        <div class="review-header">
+          <h2>Review Answers</h2>
+          <button id="back-to-result-btn" class="btn btn-secondary">
+            &larr; Back to Result
+          </button>
+        </div>
+        <div class="review-legend">
+          <span class="legend-row"
+            ><span class="legend-swatch review-swatch-correct"></span
+            >Correct</span
+          >
+          <span class="legend-row"
+            ><span class="legend-swatch review-swatch-incorrect"></span
+            >Incorrect</span
+          >
+          <span class="legend-row"
+            ><span class="legend-swatch review-swatch-unattempted"></span
+            >Unattempted</span
+          >
+        </div>
+        <div id="review-container" class="review-container">
+          <!-- injected by app.js -->
+        </div>
+      </div>
+    </section>
+    <!-- ============================================================ -->
+    <!-- FEEDBACK MODAL - Appears after results -->
+    <!-- ============================================================ -->
+    <div id="feedback-modal" class="modal-overlay hidden">
+      <div class="modal-box feedback-modal-box">
+        <button
+          id="feedback-close-btn"
+          class="feedback-close-btn"
+          aria-label="Close feedback form"
+        >
+          <svg
+            width="20"
+            height="20"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2.5"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+        </button>
+
+        <h3>Would You Like to Give Feedback?</h3>
+        <p class="feedback-subtitle">
+          Help improve this test platform. Your feedback is valuable.
+        </p>
+
+        <form
+          id="feedback-form"
+          action="https://formspree.io/f/xaqggwlb"
+          method="POST"
+        >
+          <!-- Name -->
+          <div class="feedback-field">
+            <label for="feedback-name"
+              >Your Name <span class="required-star">*</span></label
+            >
+            <input
+              type="text"
+              id="feedback-name"
+              name="name"
+              placeholder="Enter your name"
+              required
+            />
+          </div>
+
+          <!-- Email (optional) -->
+          <div class="feedback-field">
+            <label for="feedback-email"
+              >Email
+              <span class="optional-text">(optional - for reply)</span></label
+            >
+            <input
+              type="email"
+              id="feedback-email"
+              name="email"
+              placeholder="your@email.com"
+            />
+          </div>
+
+          <!-- Stars Rating -->
+          <div class="feedback-field">
+            <label
+              >Rate Your Experience <span class="required-star">*</span></label
+            >
+            <div class="star-rating" id="star-rating">
+              <span class="star" data-value="1">★</span>
+              <span class="star" data-value="2">★</span>
+              <span class="star" data-value="3">★</span>
+              <span class="star" data-value="4">★</span>
+              <span class="star" data-value="5">★</span>
+            </div>
+            <input
+              type="hidden"
+              id="feedback-rating"
+              name="rating"
+              value="0"
+              required
+            />
+            <span class="rating-label" id="rating-label">Select a rating</span>
+          </div>
+
+          <!-- Message -->
+          <div class="feedback-field">
+            <label for="feedback-message"
+              >Your Feedback <span class="required-star">*</span></label
+            >
+            <textarea
+              id="feedback-message"
+              name="message"
+              rows="4"
+              placeholder="What did you like? What could be improved?"
+              required
+            ></textarea>
+          </div>
+
+          <!-- Hidden fields for context -->
+          <input type="hidden" name="_subject" value="New Test Feedback" />
+          <input type="hidden" name="_replyto" id="feedback-replyto" value="" />
+
+          <!-- Buttons -->
+          <div class="feedback-actions">
+            
+            <button
+              type="submit"
+              id="feedback-submit-btn"
+              class="btn btn-primary"
+            >
+              Send Feedback
+            </button>
+          </div>
+
+          <div id="feedback-status" class="feedback-status hidden"></div>
+        </form>
+      </div>
+    </div>
+    <!-- ============================================================ -->
+    <!-- SCRIPTS -->
+    <!-- ============================================================ -->
+    <script src="js/questionData.js"></script>
+    <script src="js/examConfig.js"></script>
+    <script src="js/questionBank.js"></script>
+    <script src="js/timer.js"></script>
+    <script src="js/examEngine.js"></script>
+    <script src="js/app.js"></script>
+  </body>
+</html>
