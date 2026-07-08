@@ -139,9 +139,6 @@ function initHome() {
   document
     .getElementById("start-nust-btn")
     .addEventListener("click", () => startExam("nust"));
-  document
-    .getElementById("start-mdcat-btn")
-    .addEventListener("click", () => startExam("mdcat"));
   
   // Merit calculator buttons - clean floating images
   const fastMeritBtn = document.getElementById("fast-merit-btn");
@@ -178,8 +175,7 @@ function initHome() {
 
     const examLogo = document.getElementById("exam-logo");
     if (examLogo) {
-      const logoExt = patternKey === "mdcat" ? "jpg" : "png";
-      examLogo.src = `data/${patternKey}.${logoExt}`;
+      examLogo.src = `data/${patternKey}.png`;
       examLogo.classList.remove("hidden");
     }
 
@@ -630,10 +626,6 @@ function initHome() {
     );
 
     showView("result");
-        // Show feedback modal after 1.5 seconds
-    setTimeout(() => {
-      showFeedback();
-    }, 1500);
   }
 
   // ---------- Aggregate Calculator ----------
@@ -670,10 +662,6 @@ function initHome() {
       nameEl.textContent = "NUST";
       formulaEl.textContent =
         "Formula: 10% Matric + 15% Intermediate + 75% NET Score";
-    } else if (patternKey === "mdcat") {
-      nameEl.textContent = "MDCAT";
-      formulaEl.textContent =
-        "Formula: 10% Matric + 40% Intermediate + 50% MDCAT Score";
     } else {
       nameEl.textContent = "FAST";
       formulaEl.textContent =
@@ -947,128 +935,10 @@ function initHome() {
     initFullscreenControls();
     initResultControls();
     initReviewControls();
-    initPaletteControls();
-    initFeedback(); 
+    initPaletteControls(); // <-- ADD THIS LINE
     showView("home");
   }
-  // ============================================================
-  // FEEDBACK FORM
-  // ============================================================
-  
-  let feedbackShown = false;
-  
-    function initFeedback() {
-    // Star rating
-    const stars = document.querySelectorAll('.star');
-    const ratingInput = document.getElementById('feedback-rating');
-    const ratingLabel = document.getElementById('rating-label');
-    
-    stars.forEach(star => {
-      star.addEventListener('click', () => {
-        const value = parseInt(star.dataset.value);
-        ratingInput.value = value;
-        
-        // Update active stars
-        stars.forEach(s => {
-          s.classList.toggle('active', parseInt(s.dataset.value) <= value);
-        });
-        
-        // Update label
-        const labels = ['', 'Terrible', 'Poor', 'Okay', 'Good', 'Excellent'];
-        ratingLabel.textContent = labels[value] || 'Select a rating';
-      });
-      
-      star.addEventListener('mouseenter', () => {
-        const value = parseInt(star.dataset.value);
-        stars.forEach(s => {
-          s.style.color = parseInt(s.dataset.value) <= value ? '#f59e0b' : '#d1d5db';
-        });
-      });
-      
-      star.addEventListener('mouseleave', () => {
-        const current = parseInt(ratingInput.value) || 0;
-        stars.forEach(s => {
-          s.style.color = parseInt(s.dataset.value) <= current ? '#f59e0b' : '#d1d5db';
-        });
-      });
-    });
-    
-    // Close button (X)
-    document.getElementById('feedback-close-btn').addEventListener('click', closeFeedback);
-    
-    // Form submission - AUTO CLOSE ON SUBMIT
-    const form = document.getElementById('feedback-form');
-    const statusDiv = document.getElementById('feedback-status');
-    
-    form.addEventListener('submit', async (e) => {
-      e.preventDefault();
-      
-      const submitBtn = document.getElementById('feedback-submit-btn');
-      submitBtn.disabled = true;
-      submitBtn.textContent = 'Sending...';
-      
-      const formData = new FormData(form);
-      
-      try {
-        const response = await fetch(form.action, {
-          method: 'POST',
-          body: formData,
-          headers: {
-            'Accept': 'application/json',
-          },
-        });
-        
-        if (response.ok) {
-          // Show success message briefly, then close
-          statusDiv.className = 'feedback-status success';
-          statusDiv.textContent = 'Thank you! Your feedback has been sent.';
-          statusDiv.classList.remove('hidden');
-          submitBtn.textContent = 'Sent!';
-          
-          // Close modal after 1.5 seconds
-          setTimeout(() => {
-            closeFeedback();
-            // Reset form
-            form.reset();
-            stars.forEach(s => s.classList.remove('active'));
-            ratingInput.value = 0;
-            ratingLabel.textContent = 'Select a rating';
-            submitBtn.disabled = false;
-            submitBtn.textContent = 'Send Feedback';
-            statusDiv.classList.add('hidden');
-          }, 1500);
-        } else {
-          throw new Error('Server error');
-        }
-      } catch (error) {
-        statusDiv.className = 'feedback-status error';
-        statusDiv.textContent = 'Something went wrong. Please try again.';
-        statusDiv.classList.remove('hidden');
-        submitBtn.disabled = false;
-        submitBtn.textContent = 'Send Feedback';
-      }
-    });
-  }
-  
-  function showFeedback() {
-    if (feedbackShown) return;
-    feedbackShown = true;
-    
-    // Update reply-to email field
-    const emailInput = document.getElementById('feedback-email');
-    const replyToInput = document.getElementById('feedback-replyto');
-    if (emailInput && replyToInput) {
-      emailInput.addEventListener('input', () => {
-        replyToInput.value = emailInput.value;
-      });
-    }
-    
-    document.getElementById('feedback-modal').classList.remove('hidden');
-  }
-  
-  function closeFeedback() {
-    document.getElementById('feedback-modal').classList.add('hidden');
-  }
+
   return { init };
 })();
 
